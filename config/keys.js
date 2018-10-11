@@ -1,3 +1,6 @@
+const user = 'ben'
+const pass = 'zxc2014'
 module.exports = {
-    mongoURI: 'mongodb://ben%400989560817@ds161112.mlab.com:61112/20181019',
+    mongoURI: `mongodb://${user}:${pass}@ds161112.mlab.com:61112/20181019`,
+    secretOrKey: 'secret'
 }
