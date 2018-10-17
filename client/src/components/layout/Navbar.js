@@ -5,10 +5,6 @@ import { connect } from 'react-redux'
 import { logoutUser } from '../../actions/authActions'
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   handleLogout = () => {
     const { handleLogout } = this.props
     window.location.href = '/'
@@ -25,7 +21,10 @@ class Navbar extends Component {
             <img src={user.avatar} style={{width: '25px', marginRight: '5px'}} alt={user.name} title="You must have a Gravatar connected to your email to display an image" />
             Logout
           </a>
-        </li>        
+        </li>   
+        <li className="nav-item">
+          <Link className="nav-link" to="/dashboard">DashBoard</Link>
+        </li>     
       </ul>
     )
 

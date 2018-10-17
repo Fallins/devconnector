@@ -4,6 +4,8 @@ import * as types from './types'
 
 import setAuthToken from '../utils/setAuthToken'
 
+import { clearCurrentProfile } from './profileActions'
+
 // Register User
 export const registeruser = (userData, history) => dispatch => {
     axios.post('/api/users/register', userData)
@@ -62,4 +64,7 @@ export const logoutUser = () => dispatch => {
 
     // Set current user to {} which will set isAuthenticated to false
     dispatch(setCurrentUser({}))
+
+    // Clear user profile if had
+    dispatch(clearCurrentProfile())
 }
