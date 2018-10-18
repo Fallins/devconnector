@@ -119,6 +119,44 @@ export const deleteEducation = id => dispatch => {
         })
 }
 
+// Get all profiles
+export const getProfiles = () => dispatch => {
+    dispatch(setProfileLoading())
+    return axios.get(`/api/profile/all`)
+        .then(res => (
+            dispatch({
+                type: types.GET_PROFILES,
+                payload: res.data
+            })
+        ))
+        .catch(err => {
+            console.log(err)
+            dispatch({
+                type: types.GET_PROFILES,
+                payload: null
+            })
+        })
+}
+
+// Get profile by handle
+export const getProfileByHandle = (handle) => dispatch => {
+    dispatch(setProfileLoading())
+    return axios.get(`/api/profile/handle/${handle}`)
+        .then(res => 
+            dispatch({
+                type: types.GET_PROFILE,
+                payload: res.data
+            })
+        )
+        .catch(err => {
+            console.log(err)
+            dispatch({
+                type: types.GET_PROFILE,
+                payload: null
+            })
+        })
+}
+
 // Profile loading
 export const setProfileLoading = () => {
     return {

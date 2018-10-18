@@ -24,6 +24,12 @@ export default (state = intialState, action) => {
                 ...state,
                 profile: null
             }
+        case types.GET_PROFILES:
+            return {
+                ...state,
+                profiles: action.payload,
+                loading: false
+            }
         default:
             return state
     }
