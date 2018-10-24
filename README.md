@@ -16,7 +16,6 @@ use free plan.(500MB)
 1. create a mLab account
 2. create a new db (choose free plan)
 3. create a new db user (just for specify db)
-ben/zxc2014
 
 ![](https://i.imgur.com/uLbHIN1.png)
 
@@ -35,7 +34,7 @@ npm i -D nodemon
 3. create an object including mongoDB connect string and export it
 ```javascript=
 module.exports = {
-    mongoURI: 'mongodb://ben@0989560817@ds161112.mlab.com:61112/20181019',
+    mongoURI: 'mongodb://{account}:{pass}@ds161112.mlab.com:61112/20181019',
 }
 ```
 4. In server.js connect to mongoDB 
